@@ -41,3 +41,10 @@ RUN set -eux; \
     echo "opcache.validate_timestamps=0" >> docker-php-ext-opcache.ini; \
     echo "opcache.interned_strings_buffer=16" >> docker-php-ext-opcache.ini; \
     echo "opcache.max_accelerated_files = 20000" >> docker-php-ext-opcache.ini
+
+ENV SERVER_NAME localhost
+ENV SERVER_ALIAS
+ENV WEB_DIR /var/www/html
+
+RUN set -eux; \
+    COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
