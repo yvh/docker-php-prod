@@ -43,7 +43,7 @@ RUN set -eux; \
     echo "opcache.max_accelerated_files = 20000" >> docker-php-ext-opcache.ini
 
 ENV SERVER_NAME localhost
-ENV SERVER_ALIAS
+ENV SERVER_ALIAS ''
 ENV WEB_DIR /var/www/html
 
 RUN set -eux; \
