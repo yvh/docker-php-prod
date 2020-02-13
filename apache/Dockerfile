@@ -46,5 +46,4 @@ ENV SERVER_NAME localhost
 ENV SERVER_ALIAS ''
 ENV WEB_DIR /var/www/html
 
-RUN set -eux; \
-    COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
