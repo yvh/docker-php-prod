@@ -47,3 +47,10 @@ ENV SERVER_ALIAS ''
 ENV WEB_DIR /var/www/html
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+
+# Set user permissions
+RUN usermod -u 1000 www-data
+RUN groupmod -g 1000 www-data
+
+RUN set -eux; \
+    chown -R www-data: /var/www/html

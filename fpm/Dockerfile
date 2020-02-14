@@ -41,3 +41,10 @@ RUN set -eux; \
     echo "opcache.validate_timestamps=0" >> docker-php-ext-opcache.ini; \
     echo "opcache.interned_strings_buffer=16" >> docker-php-ext-opcache.ini; \
     echo "opcache.max_accelerated_files = 20000" >> docker-php-ext-opcache.ini
+
+# Set user permissions
+RUN usermod -u 1000 www-data
+RUN groupmod -g 1000 www-data
+
+RUN set -eux; \
+    chown -R www-data: /var/www/html
