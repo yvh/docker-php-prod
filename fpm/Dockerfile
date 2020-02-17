@@ -15,7 +15,7 @@ RUN set -eux; \
 
 # Add php extensions
 RUN set -eux; \
-    pecl install apcu; \
+    pecl install apcu-4.0.11; \
     docker-php-ext-enable apcu; \
     pecl clear-cache
 
