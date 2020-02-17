@@ -1,4 +1,4 @@
-FROM yannickvh/php:7.4-apache
+FROM yannickvh/php:5.4-apache
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -15,7 +15,7 @@ RUN set -eux; \
 
 # Add php extensions
 RUN set -eux; \
-    pecl install apcu; \
+    pecl install -Z apcu-4.0.11; \
     docker-php-ext-enable apcu; \
     pecl clear-cache
 
