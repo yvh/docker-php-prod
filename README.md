@@ -36,6 +36,28 @@ See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-prod/)
 
 Same use as the [official PHP docker image](https://hub.docker.com/_/php/) but replace `php` image by `yannickvh/php-prod`
 
+## Additional environment variables
+
+`SERVER_NAME`
+
+Define server name for apache
+
+`SERVER_ALIAS`
+
+Define server alias for apache
+  
+`WEB_DIR`
+
+Define web directory for apache
+
+`INSTALL_WP_CLI`
+
+Install the last version of wp-cli (not available for `5.3*`)
+
+`INSTALL_COMPOSER`
+
+Install the last version of composer (not available for `5.3*`)
+
 # User Feedback
 
 ## Issues

@@ -48,3 +48,8 @@ RUN groupmod -g 1000 www-data
 
 RUN set -eux; \
     chown -R www-data: /var/www/html
+
+ENV INSTALL_WP_CLI false
+ENV INSTALL_COMPOSER false
+
+COPY docker-php-* /usr/local/bin/
