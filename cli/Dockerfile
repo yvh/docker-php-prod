@@ -23,7 +23,7 @@ RUN set -eux; \
     cd /usr/local/etc/php; \
     sed -i -e "s|;date.timezone =|date.timezone = Europe/Brussels|" php.ini; \
     sed -i -e "s|;cgi.fix_pathinfo=1|cgi.fix_pathinfo = 0|" php.ini; \
-    sed -i -e "s|;realpath_cache_size = 4096k|realpath_cache_size = 4096K|" php.ini; \
+    sed -i -e "s|;realpath_cache_size = 16k|realpath_cache_size = 4096K|" php.ini; \
     sed -i -e "s|;realpath_cache_ttl = 120|realpath_cache_ttl = 600|" php.ini
 
 RUN set -eux; \
@@ -33,14 +33,6 @@ RUN set -eux; \
     echo "apc.shm_size=128M" >> docker-php-ext-apc.ini; \
     echo "apc.ttl=7200" >> docker-php-ext-apc.ini; \
     echo "apc.enable_cli=0" >> docker-php-ext-apc.ini
-
-RUN set -eux; \
-    cd /usr/local/etc/php/conf.d; \
-    echo "opcache.enable=1" >> docker-php-ext-opcache.ini; \
-    echo "opcache.enable_cli=1" >> docker-php-ext-opcache.ini; \
-    echo "opcache.validate_timestamps=0" >> docker-php-ext-opcache.ini; \
-    echo "opcache.interned_strings_buffer=16" >> docker-php-ext-opcache.ini; \
-    echo "opcache.max_accelerated_files = 20000" >> docker-php-ext-opcache.ini
 
 ENV INSTALL_WP_CLI false
 ENV INSTALL_COMPOSER false
