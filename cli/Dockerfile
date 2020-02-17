@@ -1,4 +1,4 @@
-FROM yannickvh/php:7.4-cli
+FROM yannickvh/php:5.3-cli
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -15,8 +15,8 @@ RUN set -eux; \
 
 # Add php extensions
 RUN set -eux; \
-    pecl install apcu; \
-    docker-php-ext-enable apcu; \
+    pecl install -Z apc; \
+    docker-php-ext-enable apc; \
     pecl clear-cache
 
 RUN set -eux; \
@@ -28,11 +28,11 @@ RUN set -eux; \
 
 RUN set -eux; \
     cd /usr/local/etc/php/conf.d; \
-    echo "apc.enabled=1" >> docker-php-ext-apcu.ini; \
-    echo "apc.shm_segments=1" >> docker-php-ext-apcu.ini; \
-    echo "apc.shm_size=128M" >> docker-php-ext-apcu.ini; \
-    echo "apc.ttl=7200" >> docker-php-ext-apcu.ini; \
-    echo "apc.enable_cli=0" >> docker-php-ext-apcu.ini
+    echo "apc.enabled=1" >> docker-php-ext-apc.ini; \
+    echo "apc.shm_segments=1" >> docker-php-ext-apc.ini; \
+    echo "apc.shm_size=128M" >> docker-php-ext-apc.ini; \
+    echo "apc.ttl=7200" >> docker-php-ext-apc.ini; \
+    echo "apc.enable_cli=0" >> docker-php-ext-apc.ini
 
 RUN set -eux; \
     cd /usr/local/etc/php/conf.d; \
