@@ -1,6 +1,6 @@
 # Custom build of PHP for production.
 
-See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-prod/)
+See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-prod)
 
 # Supported tags and respective `Dockerfile` links
 
