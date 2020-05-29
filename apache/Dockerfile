@@ -9,6 +9,7 @@ RUN set -eux; \
         git \
         less \
         vim \
+        unzip \
         openssh-client; \
     apt-get clean; \
     rm -r /var/lib/apt/lists/*
