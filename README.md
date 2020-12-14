@@ -4,9 +4,12 @@ See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-prod)
 
 # Supported tags and respective `Dockerfile` links
 
-- [ `7.4-apache` (*7.4/apache/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/master/apache/Dockerfile)
-- [ `7.4-cli` (*7.4/cli/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/master/cli/Dockerfile)
-- [ `7.4-fpm` (*7.4/fpm/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/master/fpm/Dockerfile)
+- [ `8.0-apache` (*8.0/apache/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/master/apache/Dockerfile)
+- [ `8.0-cli` (*8.0/cli/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/master/cli/Dockerfile)
+- [ `8.0-fpm` (*8.0/fpm/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/master/fpm/Dockerfile)
+- [ `7.4-apache` (*7.4/apache/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/7.4/apache/Dockerfile)
+- [ `7.4-cli` (*7.4/cli/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/7.4/cli/Dockerfile)
+- [ `7.4-fpm` (*7.4/fpm/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/7.4/fpm/Dockerfile)
 - [ `7.3-apache` (*7.3/apache/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/7.3/apache/Dockerfile)
 - [ `7.3-cli` (*7.3/cli/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/7.3/cli/Dockerfile)
 - [ `7.3-fpm` (*7.3/fpm/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/7.3/fpm/Dockerfile)
@@ -45,7 +48,7 @@ Define server name for apache
 `SERVER_ALIAS`
 
 Define server alias for apache
-  
+
 `WEB_DIR`
 
 Define web directory for apache
@@ -57,6 +60,10 @@ Install the last version of wp-cli (not available for `5.3*`)
 `INSTALL_COMPOSER`
 
 Install the last version of composer (not available for `5.3*`)
+
+`COMPOSER_VERSION`
+
+Choose composer version `--1` or `--2` (default `--2`)
 
 # User Feedback
 

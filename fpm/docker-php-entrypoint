@@ -31,7 +31,7 @@ if [ ! -e $CONTAINER_ALREADY_STARTED ]; then
 		    exit 1
 		fi
 
-		php composer-setup.php --quiet --install-dir=/usr/local/bin/ --filename=composer
+		php composer-setup.php --quiet --install-dir=/usr/local/bin/ --filename=composer $COMPOSER_VERSION
 		rm composer-setup.php
 	fi
 fi
