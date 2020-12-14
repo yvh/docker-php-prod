@@ -1,4 +1,4 @@
-FROM yannickvh/php:7.4-apache
+FROM yannickvh/php:8.0-apache
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
