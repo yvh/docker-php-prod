@@ -52,5 +52,6 @@ RUN set -eux; \
 
 ENV INSTALL_WP_CLI false
 ENV INSTALL_COMPOSER false
+ENV COMPOSER_VERSION --2
 
 COPY docker-php-* /usr/local/bin/
