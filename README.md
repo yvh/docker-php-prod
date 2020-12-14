@@ -35,9 +35,13 @@ See repository on [Docker Hub](https://hub.docker.com/r/yannickvh/php-prod)
 - [ `5.3-cli` (*5.3/cli/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/5.3/cli/Dockerfile)
 - [ `5.3-fpm` (*5.3/fpm/Dockerfile*)](https://github.com/yvh/docker-php-prod/blob/5.3/fpm/Dockerfile)
 
+# Base image
+
+[yannickvh/php](https://hub.docker.com/r/yannickvh/php)
+
 # How to use this image
 
-Same use as the [official PHP docker image](https://hub.docker.com/_/php/) but replace `php` image by `yannickvh/php-prod`
+Same use as the [official PHP docker image](https://hub.docker.com/_/php/) and [yannickvh/php](https://hub.docker.com/r/yannickvh/php)
 
 ## Additional environment variables
 
