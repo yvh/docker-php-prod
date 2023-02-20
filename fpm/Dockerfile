@@ -3,17 +3,6 @@ LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Install dependencies
-RUN set -eux; \
-    apt-get update && apt-get install -y --no-install-recommends \
-        git \
-        less \
-        vim \
-        unzip \
-        openssh-client; \
-    apt-get clean; \
-    rm -r /var/lib/apt/lists/*
-
 # Add php extensions
 RUN set -eux; \
     pecl install apcu; \
