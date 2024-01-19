@@ -1,4 +1,7 @@
-FROM yannickvh/php:8.0-cli
+ARG PHP_BASE_IMAGE=
+
+FROM $PHP_BASE_IMAGE
+
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -32,12 +35,15 @@ RUN set -eux; \
     echo "opcache.interned_strings_buffer=16" >> docker-php-ext-opcache.ini; \
     echo "opcache.max_accelerated_files = 20000" >> docker-php-ext-opcache.ini
 
+ENV SERVER_NAME localhost
+ENV SERVER_ALIAS ''
+ENV WEB_DIR /var/www/html
+
+COPY apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+
 # Set user permissions
 RUN usermod -u 1000 www-data
 RUN groupmod -g 1000 www-data
 
-ENV INSTALL_WP_CLI false
-ENV INSTALL_COMPOSER false
-ENV COMPOSER_VERSION --2
-
-COPY docker-php-* /usr/local/bin/
+RUN set -eux; \
+    chown -R www-data: /var/www/html

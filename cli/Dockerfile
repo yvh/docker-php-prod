@@ -1,4 +1,7 @@
-FROM yannickvh/php:8.3-cli
+ARG PHP_BASE_IMAGE=
+
+FROM $PHP_BASE_IMAGE
+
 LABEL maintainer="Yannick Vanhaeren"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -35,9 +38,3 @@ RUN set -eux; \
 # Set user permissions
 RUN usermod -u 1000 www-data
 RUN groupmod -g 1000 www-data
-
-ENV INSTALL_WP_CLI false
-ENV INSTALL_COMPOSER false
-ENV COMPOSER_VERSION --2
-
-COPY docker-php-* /usr/local/bin/
