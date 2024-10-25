@@ -10,9 +10,9 @@ COPY config-update.sh /config-update.sh
 
 RUN /config-update.sh && rm /config-update.sh
 
-ENV SERVER_NAME localhost
-ENV SERVER_ALIAS ''
-ENV WEB_DIR /var/www/html
+ENV SERVER_NAME=localhost
+ENV SERVER_ALIAS=''
+ENV WEB_DIR=/var/www/html
 
 COPY apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 
